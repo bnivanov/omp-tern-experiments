@@ -1,8 +1,8 @@
 # OMP / Tern experiments
 
-Portable delivery guidance for OMP, with optional Tern boards and visible interactive sessions.
+Portable delivery guidance for OMP, with optional Tern boards and visible interactive sessions, plus a workflow-evals lab specification in [`workflow-workbench/`](workflow-workbench/).
 
-This is a **Markdown rule and skill package**, not an executable plugin. It contains no extension code, installer, credentials, provider configuration, personal workspace records, or machine-specific paths. Do not use `omp plugin install` or `tern plugin install` for this package.
+The delivery guidance is a **Markdown rule and skill package**, not an executable plugin. The repository contains no extension code, installer, credentials, provider configuration, personal workspace records, or machine-specific paths. Do not use `omp plugin install` or `tern plugin install` for anything here.
 
 ## What it does
 
@@ -76,12 +76,32 @@ Adopt a board deliberately at the relevant project root; do not create a second 
 
 For concurrent visible work, select only authorized ready items, assign one coordinator, and give each writing session a separate checkout and bounded assignment. Consult the installed Tern CLI help for the target window/session and tab commands. A Tern tab is not checkout isolation, and a quiet tab is not completion evidence. Review worker artifacts and smoke the integrated result before accepting work.
 
-## Package contents
+## Workflow Workbench (evals lab)
+
+[`workflow-workbench/`](workflow-workbench/) is a personal-lab specification for credible **workflow evals**: whole-workflow outcomes (deliverables, cost, reliability) rather than model or harness benchmarks, measured with calibrated graders and pre-registered comparisons, and designed to survive OMP and model updates. It is OMP + Tern centric; Claude Code is a fallback runtime only. Nothing is installed: it is a project folder you open and work in.
+
+Start with:
+
+1. [`workflow-workbench/docs/WORKFLOW-EVALS-STRATEGY.md`](workflow-workbench/docs/WORKFLOW-EVALS-STRATEGY.md): the lab model, metrics, grading, protocol, durability, OMP + Tern mapping, domain extension (proposals → software factory → video) and phased roadmap. Section 10 defines a **Claude-only corporate role profile** (default Claude Sonnet, high thinking, 200k; task and scout subagents Claude Haiku, 100k cap; slow seat Claude Opus 5.5, high thinking, 200k).
+2. [`workflow-workbench/docs/RISKIEST-ASSUMPTIONS.md`](workflow-workbench/docs/RISKIEST-ASSUMPTIONS.md): what must be proven first, with tests and pass/kill criteria.
+3. [`workflow-workbench/README.md`](workflow-workbench/README.md): scope, decisions and the earlier portability runner (proposed freeze: kept, not extended).
+
+Prerequisites on the destination machine: OMP and Tern (the specification's CLI mapping was checked against OMP 18.12.2 and Tern 0.9.4 help output), Git, and Python 3.11+ on macOS/Linux for the optional runner and its tests. Phase 0 instrumentation is specified, not implemented. Running the specification's experiments launches models and incurs usage; keep run outputs, sessions and any non-synthetic data outside the repository in approved storage.
+
+No-model checks from inside `workflow-workbench/`:
+
+```text
+python3 -m unittest discover -s tests
+python3 scripts/run_workflow.py validate workflows/proposal-storyline.workflow.json
+```
+
+## Contents
 
 - `rules/delivery-best-practice.md`
 - `skills/delivery-best-practice/SKILL.md`
 - `skills/delivery-best-practice/references/board.md`
 - `skills/delivery-best-practice/templates/`: `TODO.md`, `PLAN.md`, `DECISIONS.md`, `HANDOFF.md`, `BACKLOG.md`
-- `SHA256SUMS`
+- `SHA256SUMS`: checksums for the eight installable delivery-guidance files above
+- `workflow-workbench/`: evals specification, assumption register, evidence base and research notes, decisions, proposed backlog, the earlier portability runner with tests, and a synthetic example
 
-The repository intentionally excludes personal records, local installation history, runtime settings, session logs, and credentials. Before publishing future changes, review both content and commit author/committer metadata for private information.
+The repository intentionally excludes personal records, local run evidence, installation history, runtime settings, session logs, and credentials. Before publishing future changes, review both content and commit author/committer metadata for private information.

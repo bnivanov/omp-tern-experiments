@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "proposal-storyline",
+  "description": "Evidence-bound proposal storyline from a supplied fictional brief, then an independent critique. Text-only portability proof. Not retrieval, slides, approval, or business acceptance.",
+  "stages": [
+    {
+      "id": "storyline",
+      "role": "storyline-author",
+      "prompt": "prompts/storyline.md",
+      "handoffs": []
+    },
+    {
+      "id": "critique",
+      "role": "independent-critic",
+      "prompt": "prompts/critique.md",
+      "handoffs": [
+        {"from": "storyline"}
+      ]
+    }
+  ]
+}

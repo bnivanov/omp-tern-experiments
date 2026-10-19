@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "id": "synthetic-riverside-saturday-pilot",
+  "fictional": true,
+  "audience": "The Riverside branch manager preparing a recommendation for the Northwind Civic Library board",
+  "decision": "Whether to ask the board to consider a 12-week Saturday afternoon pilot at the Riverside branch",
+  "objective": "Give a human an evidence-bound storyline and an independent critique. This packet does not decide the pilot.",
+  "constraints": [
+    "Use only the sources and known gaps in this file.",
+    "Do not invent costs, votes, visit counts, or community consensus.",
+    "The output is markdown for human review, not slides and not an approval."
+  ],
+  "sources": [
+    {
+      "id": "SRC-001",
+      "title": "Board minute excerpt",
+      "date": "2026-02-18",
+      "text": "The board asked staff to return with a recommendation on a possible 12-week Saturday afternoon pilot at the Riverside branch. No motion was made. No budget was approved. The minute records the request and does not record a preferred option."
+    },
+    {
+      "id": "SRC-002",
+      "title": "Riverside door-count table",
+      "date": "2026-01-31",
+      "text": "The packet includes January 2026 only. Riverside weekday average was 410 visits per day. The branch was closed on Saturdays and Sundays, so there is no Saturday visit count. A footnote says February through October 2026 counts were not included in this packet."
+    },
+    {
+      "id": "SRC-003",
+      "title": "Staff memo",
+      "date": "2026-03-04",
+      "text": "Two circulation leads wrote that they would support a pilot if an existing part-time shift can cover the desk. The facilities lead wrote that Saturday HVAC startup has not been costed. The memo states no dollar figure, no security plan, and no confirmation that the part-time shift is available."
+    },
+    {
+      "id": "SRC-004",
+      "title": "Patron email digest",
+      "date": "2026-01-31",
+      "text": "From 2026-01-09 through 2026-01-31, staff logged 14 patron messages asking for Saturday hours at Riverside and 3 messages asking to keep the branch closed on weekends because of parking. The digest says this is an inbox log, not a survey, and that no response rate or visitor total is available."
+    }
+  ],
+  "known_gaps": [
+    "No approved operating budget, and no cost estimate for Saturday HVAC, staffing, or security.",
+    "No visit counts after January 2026, and no Saturday baseline because the branch was closed.",
+    "No board vote or selected option is recorded.",
+    "The part-time shift mentioned by circulation leads is not confirmed as available.",
+    "Patron messages are an inbox log, not a representative sample.",
+    "No neighboring-branch comparison and no city weekend-hours policy is in the packet."
+  ],
+  "output_expectations": {
+    "format": "markdown",
+    "storyline_sections": [
+      "Recommendation",
+      "Options and tradeoffs",
+      "Narrative",
+      "Intended action",
+      "Evidence map",
+      "Gaps"
+    ],
+    "critique_sections": [
+      "Claim check",
+      "Unsupported assumptions",
+      "Contradictions",
+      "Missing decision information",
+      "Not an approval"
+    ],
+    "semantic_verification_by_runner": false,
+    "business_acceptance": false
+  }
+}
